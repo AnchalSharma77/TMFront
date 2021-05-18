@@ -1,0 +1,33 @@
+<div class="container" >
+    <br><br>
+    <div class="row">
+  <div class="card"  *ngFor="let notes of classList;let i = index">
+    <div class="card-header">
+    
+        <!-- <h3 class="profile-username text-center">{{classList[i].name}}</h3> -->
+        <h5 class="profile-username text-center">{{classList[i].date}}</h5>
+     
+    </div>
+    <div class="card-body">
+        <ul class="list-group list-group-unbordered">
+          <li class="list-group-item" >
+            {{classList[i].name}}
+          </li>
+            <li class="list-group-item" >
+                <b>Std.</b> : {{classList[i].std}}
+            </li>
+            <li class="list-group-item" >
+               
+               {{classList[i].msg}}
+            </li>
+            <!-- <li class="list-group-item" style="">
+                <!-- {{tutorList[i].description}} -->
+                <!-- <b>About</b> {{classList[i].description}}
+            </li> --> 
+          </ul>
+          <a href= {{classList[i].link}} target="_blank" class="btn btn-primary" style="background: linear-gradient(40deg, #ce0d84, #790421); border: rgb(218, 9, 79); color: floralwhite;"
+          >Join</a>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,48 @@
+<body class="hold-transition register-page">
+  
+    <div class="register-logo">
+      <a ><b>Mark Attendance</b></a>
+          </div>
+      <form>
+          <table cell-padding="50px">
+          <thead>
+            <tr>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Name</th>
+            <th  rowspan="1" colspan="1" >
+              <input type="radio" name ="all" col  value="AllPrsent" > 
+              All Present
+            </th>
+          
+            <th  rowspan="1" colspan="1" >
+              <input type="radio" name ="all"  value="AllAbsent" >
+              All Absent
+            </th> 
+          </tr>
+        
+          <tr *ngFor="let stu of test;let i = index">
+          
+            <td >
+              {{stu.email}}
+            </td>
+            <td >{{stu.mobile}}</td>
+            <td class="sorting_1" >{{stu.name}}</td>
+            <td><input type="radio" name ="att{{stu.mobile}} " value = "P" [(ngModel)]="att[i]" (change)="check($event,i)"  [checked]="att[i] == 'P' " >
+              Present</td>
+            <td>
+              <input type="radio" name ="att{{stu.mobile}} " value="A" [(ngModel)]="att[i]"  (change)="check($event,i)"  [checked]="att[i] == 'A' "   >
+              Absent
+            </td>
+          </tr>
+          </thead>
+        </table>
+        
+        <br>
+        <div >
+          <button type="submit" class="btn btn-primary" style="background: linear-gradient(40deg, #ce0d84, #790421); border: rgb(218, 9, 79);"
+          (click)="sendData()">Submit</button>
+        </div>
+        </form>
+      
+      </body>

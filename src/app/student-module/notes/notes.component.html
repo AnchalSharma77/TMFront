@@ -1,0 +1,36 @@
+<body class="hold-transition register-page">
+    
+      <div class="register-logo">
+        <a ><b>Available Notes</b></a>
+      </div>
+    
+    <div class="row">
+      
+        <!-- NotesList -->
+        <table cell-padding="50px">
+         <thead>
+         <tr>
+         <th>Sr No.</th>
+         <!-- <th>Std.</th> -->
+         <th>File Name</th>
+         <th>Download</th>
+         </tr>
+     
+         <tr *ngFor="let notes of notesList;let i = index">
+         
+             <td >{{i+1}} </td>
+             <!-- <td >{{notesList[i].std}}</td> -->
+             <td >{{notesList[i].fileName}}</td>
+             <td  ><a href="/assets{{notesList[i].url}}" download> download</a>
+                <span class=" fa-download form-control-feedback"></span>
+            </td>
+            
+         </tr>
+         </thead>
+ 
+     
+     </table>
+ </div>
+ </body>
+   
+ 

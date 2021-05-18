@@ -1,0 +1,84 @@
+
+  <body class="hold-transition register-page">
+    <div class="register-box">
+      <div class="register-logo">
+        <a ><b>Upload Notes</b></a>
+      </div>
+    
+      <div class="register-box-body">
+           <!--whitebox heading-->
+           <p class="login-box-msg"></p>
+        <form  method="post" [formGroup]="addNotes">
+            <div class="form-group has-feedback" >
+                <input type="text" class="form-control" placeholder="Std" formControlName="std">
+                <span class="glyphicon glyphicon-book form-control-feedback"></span>
+                <small *ngIf="addNotes.get('std').invalid && addNotes.get('std').touched" class="text-danger">
+                    std id is required
+                </small>
+            </div>
+            
+
+            
+            <div class="form-group has-feedback" >
+                <input type="text" class="form-control" placeholder="fileName" formControlName="fileName">
+                <span class="fa  fa-file-pdf-o form-control-feedback"></span>
+            </div>
+
+           
+            
+            <div class="row">
+            <div class="col-xs-4" style=" left: 35%;">
+              <div class="file-input">
+                <input type="file" (change)=onNotesUpload($event) [disabled]="!addNotes.valid"
+                style=" color: floralwhite;" id="file22" class="file" >
+                <label for="file22"  >Select File</label>
+              </div>
+            </div>
+        </div>
+
+       
+        </form>
+     
+    
+       
+      </div>
+      <!-- /.form-box -->
+    </div>
+    <!-- /.register-box -->
+</body>
+
+
+
+    <div class="row">
+      
+       <!-- NotesList -->
+       <table cell-padding="50px">
+        <thead>
+        <tr>
+        <th>Sr No.</th>
+        <th>Std.</th>
+        <th>File Name</th>
+        <th>Download</th>
+        </tr>
+    
+        <tr *ngFor="let notes of notesList;let i = index">
+        
+            <td >{{i+1}} </td>
+            <td >{{notesList[i].std}}</td>
+            <td >{{notesList[i].fileName}}</td>
+            <td  ><a href="/assets{{notesList[i].url}}" download> download
+              <!-- <span class=" fa-download form-control-feedback"></span> -->
+            </a>
+              
+            </td>
+           
+        </tr>
+        </thead>
+
+    
+    </table>
+</div>
+
+  
+
+     

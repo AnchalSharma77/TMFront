@@ -1,0 +1,179 @@
+<div class="wrapper" style="height: auto; min-height: 100%;  ">
+
+    <header class="main-header" style="background:  #af2269 !important;">
+  
+      <!-- Logo -->
+      <a href="index2.html" class="logo" style="background:#af2269 !important;">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini" ><b>TM</b></span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg" ><b>TM</b></span>
+      </a>
+  
+      <!-- Header Navbar: style can be found in header.less -->
+      <nav class="navbar navbar-static-top" style="background:  linear-gradient(to right,#af2269, #020120) !important; justify-content:left !important">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle"  data-toggle="push-menu" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+        <!-- Navbar Right Menu -->
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+           
+    
+            <li class="dropdown user user-menu" style="width: 76vw;" >
+           
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="left: 62vw !important;">
+              
+                <img src={{imgUrl}} class="user-image" alt="User Image">
+                <span class="hidden-xs">{{userName}}</span>
+              </a>
+              <ul class="dropdown-menu">
+                <!-- User image -->
+                <li class="user-header"style="background: #c7719c !important;">
+                  <img src={{imgUrl}} class="img-circle" alt="User Image">
+                 
+                  <p>
+                    {{userName}}
+                    <!-- <small>Tutor details</small> -->
+                    
+
+                  </p>
+                </li>
+                <!-- Menu Body -->
+                
+                <li class="user-footer">
+                  <div class="pull-left">
+                  <small>
+                    <div class="file-input">
+                      <input type="file" (change)=onFileChanged($event) style=" color: floralwhite;  width: 100px !important;" id="file" class="file" >
+                      <label for="file">Edit Image</label>
+                    </div>
+                  
+                  </small>
+                  </div>
+
+                  <div class="pull-right">
+                    <a  class="btn btn-default btn-flat" (click)="signout()">Sign out</a>
+                  </div>
+                 
+                </li>
+              </ul>
+            </li>
+          
+
+          </ul>
+        </div>
+  
+      </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar" style="background: #16050e ;">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar" style="height: auto;">
+        <!-- Sidebar user panel -->
+        <div class="user-panel" >
+          <div class="pull-left image" style="padding-top:5px;" >
+           
+            <img src={{imgUrl}} class="img-circle" alt="User Image" style="height: 60px;">
+            
+            
+          </div>
+          <div class="pull-left info" style="padding-top: 30px ;">
+            <p>{{userName}}</p>
+            <!-- <a href="#"><i class="fa fa-circle text-success"></i> Online</a> -->
+          </div>
+          <br>
+            
+           
+        </div>
+        <!-- <div class="file-input">
+          <input type="file" (change)=onFileChanged($event) style=" color: floralwhite;" id="file" class="file" >
+          <label for="file">Edit Profile Image</label>
+        </div> -->
+          
+        <!--text to be displayed in  black line-->
+        
+        <a href="#" >
+        <ul class="sidebar-menu tree" data-widget="tree"  >
+          <li class="header" style="background: #310c20 ;">
+          </li>
+          <li>
+            <a [routerLink]="['/tutor/tutorPanel/dashboard']"  queryParamsHandling="preserve">
+                <i class="fa fa-dashboard"></i> <span>Dashboard</span> 
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['/tutor/tutorPanel/class']"  queryParamsHandling="preserve">
+                <i class="fa fa-desktop"></i> <span>Class</span> 
+            </a>  
+          </li>
+
+          <li>
+            <a [routerLink]="['/tutor/tutorPanel/registerStudent']"  queryParamsHandling="preserve">
+                <i class="fa fa-user-plus"></i> <span>Add Student</span> 
+            </a>
+          </li>
+         
+          <li>
+            <a [routerLink]="['/tutor/tutorPanel/removeStudent']"  queryParamsHandling="preserve">
+                <i class="fas fa-user-minus"></i> <span> Remove Student</span> 
+            </a>
+          </li>
+         
+          <li>
+            <a [routerLink]="['/tutor/tutorPanel/markAttendance']"  queryParamsHandling="preserve">
+                <i class="fa fa-book"></i> <span>Attendance</span> 
+            </a>  
+          </li>
+
+          <li>
+            <!-- -->
+            <a  [routerLink]="['/tutor/tutorPanel/pay']"  queryParamsHandling="preserve">
+                <i class="fas fa-money-bill-wave"></i> <span> Pay Fee</span> 
+            </a>
+          </li>
+
+          <li>
+            <a [routerLink]="['/tutor/tutorPanel/setFee']" queryParamsHandling="preserve">
+                <i class="fas fa-money-check-edit-alt"></i> <span> Set/Update Fee</span> 
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['/tutor/tutorPanel/uploadNotes']"  queryParamsHandling="preserve">
+                <i class="fa fa-book"></i> <span>Upload Notes</span> 
+            </a>  
+          </li>
+        </ul>
+      </a>
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+  
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 1046px;">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+    
+      </section>
+  
+      <!-- Main content -->
+      <section class="content">
+        <router-outlet></router-outlet>
+      
+  
+      </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+  
+    <footer class="main-footer"style=" color:rgb(218, 9, 79);">
+      <div class="pull-right hidden-xs" >
+        <b>Version</b> 0.0.01
+      </div>
+      <div >
+      <strong > <a href=" " style=" color:rgb(218, 9, 79);">TM</a></strong> 
+    </div>
+    </footer>
+  
+      

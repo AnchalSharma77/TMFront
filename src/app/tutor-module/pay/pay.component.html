@@ -1,0 +1,74 @@
+<body class="hold-transition register-page">
+    <div class="register-box">
+      <div class="register-logo">
+        <a ><b>Pay</b></a>
+      </div>
+    
+      <div class="register-box-body">
+           <!--whitebox heading-->
+           <p class="login-box-msg"></p>
+
+        <form  [formGroup]="payFee">
+            <div class="form-group has-feedback" >
+                <input type="text" class="form-control" placeholder="User Id" formControlName="id" >
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                <small *ngIf="payFee.get('id').invalid && payFee.get('id').touched" class="text-danger">
+                  email id is required
+                </small>
+            </div>
+           
+        
+            <div class="row">
+            <div class="col-xs-4" style=" left: 34%;" >
+                <button type="submit" class="btn btn-primary btn-block btn-flat" style="background: linear-gradient(40deg, #ce0d84, #790421); border: rgb(218, 9, 79);"
+                 (click)=showDue() [disabled]="!payFee.get('id').valid">Check</button>
+              </div>
+            </div> <br>
+
+            
+            <div class="form-group has-feedback" >
+                <input type="text" class="form-control" placeholder="number of months due" formControlName="monthsDue" [(ngModel)]="dueResponse">
+                <span class="fa  fa-calendar-times-o form-control-feedback"></span>
+            </div>
+
+            <div class="form-group has-feedback" >
+                <input type="text" class="form-control" placeholder="Pay for.....months" formControlName="payFor">
+                <span class="fa    fa-credit-card form-control-feedback"></span>
+                <small *ngIf="payFee.get('payFor').invalid && payFee.get('payFor').touched" class="text-danger">
+                  number of months are required
+                </small>
+            </div>
+            
+            <div class="row">
+            <div class="col-xs-4" style=" left: 34%;">
+                <button type="submit" class="btn btn-primary btn-block btn-flat"  style="background: linear-gradient(40deg, #ce0d84, #790421); border: rgb(218, 9, 79);"
+                (click)=makePayment() [disabled]="!payFee.valid">Pay</button>
+            </div>
+        </div>
+             
+        </form>
+    
+       
+      </div>
+      <!-- /.form-box -->
+    </div>
+    <!-- /.register-box -->
+    
+    <!-- jQuery 3 -->
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- iCheck -->
+    <script src="../../plugins/iCheck/icheck.min.js"></script>
+    <script>
+      $(function () {
+        $('input').iCheck({
+          checkboxClass: 'icheckbox_square-blue',
+          radioClass: 'iradio_square-blue',
+          increaseArea: '20%' /* optional */
+        });
+      });
+    </script>
+    
+    
+    </body>

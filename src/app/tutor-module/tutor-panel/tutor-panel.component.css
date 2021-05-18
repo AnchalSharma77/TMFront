@@ -1,0 +1,7 @@
+.sidebar-toggle:hover{
+    background-color: #b65284 !important;
+}
+
+.sidebar-menu>li:hover>a{
+    background-color: #b65284 !important;
+}

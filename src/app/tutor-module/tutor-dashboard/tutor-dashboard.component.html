@@ -1,0 +1,59 @@
+<form  >
+    <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box">
+                  <span class="info-box-icon bg-yellow" style="background-color: #c7719c   !important;"><i class="ion ion-ios-people-outline"></i></span>
+      <!-- rgb(110, 21, 110) -->
+                  <div class="info-box-content">
+                    <span class="info-box-text">Total Students</span>
+                    <span class="info-box-number">{{totalStudents}}</span>
+                  </div>
+                  <!-- /.info-box-content -->
+                </div>
+                <!-- /.info-box -->
+        </div>
+       
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-aqua" style="background-color: #c7719c   !important;"><i class=" fa fa-money"></i></span>
+    
+              <div class="info-box-content">
+                <span class="info-box-text">Total Due Sum</span>
+                <span class="info-box-number">{{totalDues}}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+    </div>
+        
+    </div>
+    
+    <div class="row">
+        <table cell-padding="50px">
+        <thead>
+          <tr>
+          <th>Email</th>
+          <th>Mobile</th>
+          <!-- <th>Name</th> -->
+          <th>Last Date</th>
+          <th>Due Months</th>
+          <th>Due Fee</th>
+          
+        </tr>
+
+        <tr *ngFor="let stu of basicData;let i = index">
+        
+          <td > {{stu.email}}</td>
+          <td >{{stu.mobile}}</td>
+          <!-- <td  >{{stu.name}}</td> -->
+          <td >{{stu.ld}}</td>
+          <td >{{stu.dm}}</td>
+          <td >{{stu.dueFee}}</td>
+        </tr>
+        </thead>
+      </table>
+    </div>
+            
+</form>   
+          
+          

@@ -1,0 +1,77 @@
+<body class="hold-transition register-page">
+    <div class="register-box">
+      <div class="register-logo">
+        <a ><b>Register</b></a>
+      </div>
+    
+      <div class="register-box-body">
+          <!--whitebox heading-->
+          <p class="login-box-msg"></p>
+
+        <form action="../../index.html" method="post" [formGroup]="registerStudent">
+          <div class="form-group has-feedback" >
+            <input type="text" class="form-control" placeholder="name" formControlName="name"
+           >
+            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+           <small *ngIf="registerStudent.get('name').invalid && registerStudent.get('name').touched" class="text-danger">
+             name is required
+           </small>
+        </div>
+
+        <div class="form-group has-feedback">
+          <input type="email" class="form-control" placeholder="email" formControlName="email">
+          <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          <small *ngIf="registerStudent.get('email').invalid && registerStudent.get('email').touched" class="text-danger">
+            email is required
+          </small>
+         
+        </div>
+            
+          <div class="form-group has-feedback">
+            <input type="Text" class="form-control" placeholder="Mobile number" formControlName="mobile">
+            <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+            <small *ngIf="registerStudent.get('mobile').invalid && registerStudent.get('mobile').touched" class="text-danger">
+              phone number is required (minimum length 10,numbers)
+            </small>
+          </div>
+          <div class="form-group has-feedback">
+            <input type="text" class="form-control" placeholder="Standard" formControlName="std">
+            <span class="glyphicon glyphicon-book form-control-feedback"></span>
+            <small *ngIf="registerStudent.get('std').invalid && registerStudent.get('std').touched" class="text-danger">
+              std is required
+            </small>
+          </div>
+        <div class="row">
+          
+            <div class="col-xs-4" style=" left: 35%;">
+              <button type="submit" class="btn btn-primary btn-block btn-flat" style="background: linear-gradient(40deg, #ce0d84, #790421); border: rgb(218, 9, 79);"
+               (click)=registerStu() [disabled]="!registerStudent.valid">Register</button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+    
+       
+      </div>
+      <!-- /.form-box -->
+    </div>
+    <!-- /.register-box -->
+    
+    <!-- jQuery 3 -->
+    <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 -->
+    <script src="../../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- iCheck -->
+    <script src="../../plugins/iCheck/icheck.min.js"></script>
+    <script>
+      $(function () {
+        $('input').iCheck({
+          checkboxClass: 'icheckbox_square-blue',
+          radioClass: 'iradio_square-blue',
+          increaseArea: '20%' /* optional */
+        });
+      });
+    </script>
+    
+    
+    </body>

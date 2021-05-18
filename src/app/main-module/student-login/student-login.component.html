@@ -1,0 +1,30 @@
+<div class="modal modal-info fade in" id="modal-info" style="display: block; padding-right: 17px;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Student Login</h4>
+      </div>
+      <!-- form body starts-->
+      <div class="modal-body">
+        <form [formGroup]="stuLoginForm">
+        <div class="form-group">
+          <label for="exampleInputEmail1" >User Id</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email or mobile" formControlName="id">
+        </div>
+        <div >
+          <button type="submit" class="btn btn-primary" (click)="getOtp()" style="margin-left: 43%;" >Get Otp</button>
+        </div><br>
+        <div class="form-group">
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter 6 digit otp" formControlName="otp">
+        </div>
+        <div >
+          <button type="submit" class="btn btn-primary" (click)="login()">Submit</button>
+        </div>
+      
+    </form>
+      <!-- form body ends-->
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>

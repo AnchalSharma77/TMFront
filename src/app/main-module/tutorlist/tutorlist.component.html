@@ -1,0 +1,95 @@
+<nav class="mb-1 navbar navbar-expand-lg navbar-dark info-color" style="margin-bottom:0 !important;  background:  linear-gradient(to right,#af2269, #020120);">
+  <a class="navbar-brand" href="#">TM</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
+    aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-4" >
+    <div class="float-right" >
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active" >
+          <a href="mailto: anchal6899@gmail.com" target="_blank" style="color: linen;">
+            <i class="fa fa-envelope" style="color: linen;"></i>
+            Contact
+          <!-- <i class="fab fa-facebook-f"></i> Facebook -->
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  </div>
+
+</nav>
+<!--/.Navbar -->
+
+<body class="hold-transition register-page">
+   <br>
+      <div class="register-logo">
+        <a ><b>Registered Tutors</b></a>
+      </div>
+    
+
+<div class="container" >
+    <br><br>
+    <div class="row">
+     
+      
+      <div class="card" style="width: 19rem;"  *ngFor="let notes of tutorList;let i = index ">
+        <img src="/assets/{{tutorList[i].imgUrl}}" onerror="this.onerror='assets/Img/Tutors.png' ; this.src='assets/Img/Tutors.png' "  alt="tutor  img" class="card-img-top" >
+        <div class="card-body">
+          <ul class="list-group list-group-unbordered">
+            <li class="list-group-item">
+                <h3 class="profile-username text-center">{{tutorList[i].fn}} {{tutorList[i].ln}}</h3>
+              </li>
+            <li class="list-group-item" >
+                <b class="pull-center">Email :</b> <br> {{tutorList[i].email}}
+            </li>
+            <li class="list-group-item" >
+               
+                <b class="pull-center">Mobile :</b> <br> {{tutorList[i].mobile}}
+            </li>
+            <li class="list-group-item" >
+                <!-- {{tutorList[i].description}} -->
+                <b class="pull-center">About :</b> <br> {{tutorList[i].description}}
+            </li>
+          </ul>
+          <a href="#" class="btn btn-primary" style="background: linear-gradient(40deg, #ce0d84, #790421); border: rgb(218, 9, 79); color: floralwhite;"
+          >Message</a>
+        </div>
+      </div>
+
+     
+      
+    </div>
+  </div>
+
+
+</body>
+
+
+<!-- 
+<div class="card"  *ngFor="let notes of tutorList;let i = index ">
+  <div class="card-header">
+      <img class="profile-user-img img-responsive img-circle" style="border: rgb(218, 9, 79);     width: 120px !important;
+      height: 120px !important;"  src="/assets/{{tutorList[i].imgUrl}}" onerror="this.onerror='assets/Img/Tutors.png' ; this.src='assets/Img/Tutors.png' "  alt="tutor  img">
+  </div>
+  <div class="card-body">
+      <ul class="list-group list-group-unbordered">
+          <li class="list-group-item">
+              <h3 class="profile-username text-center">{{tutorList[i].fn}} {{tutorList[i].ln}}</h3>
+            </li>
+          <li class="list-group-item" >
+              <b class="pull-left">Email :</b>  {{tutorList[i].email}}
+          </li>
+          <li class="list-group-item" >
+             
+              <b class="pull-left">Mobile :</b>  {{tutorList[i].mobile}}
+          </li>
+          <li class="list-group-item" >
+              
+              <b class="pull-left">About :</b> {{tutorList[i].description}}
+          </li>
+        </ul>
+   
+  </div>
+</div> -->

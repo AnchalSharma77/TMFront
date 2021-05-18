@@ -1,0 +1,140 @@
+<body class="hold-transition register-page">
+  <div class="register-box">
+    <div class="register-logo">
+      <a ><b>Schedule A Class</b></a>
+    </div>
+  
+    <div class="register-box-body">
+      <p class="login-box-msg"></p>
+
+      <form   [formGroup]="classForm">
+         
+            <div class="form-group has-feedback" >
+              <input type="text" class="form-control" placeholder="std"  formControlName="std" >
+              <span class="glyphicon glyphicon-user form-control-feedback"></span>
+              <small *ngIf="classForm.get('std').invalid && classForm.get('std').touched" class="text-danger">
+                Std  is required
+              </small>
+        </div>
+          
+          
+        <div class="form-group has-feedback">
+          <!--  -->
+          <input type="date" class="form-control" placeholder="date " formControlName="date" style="padding-right:2px" id="date">
+          <small *ngIf="classForm.get('date').invalid && classForm.get('date').touched" class="text-danger">
+            Date is required
+          </small>
+        </div>
+        <div class="form-group has-feedback">
+          <input type="text" class="form-control" placeholder="name for class(e.g. subject..)" formControlName="name">
+          <span class="glyphicon glyphicon-phone form-control-feedback"></span>
+          <small *ngIf="classForm.get('name').invalid && classForm.get('name').touched" class="text-danger">
+            <!-- Mobile number is required and must be of 10 digits -->
+          </small>
+        </div>
+       
+        <div class="form-group has-feedback">
+          <input type="text" class="form-control" placeholder="link" formControlName="link" 
+          (input)="updateServerStatus($event)">
+          <span class="fa fa-link form-control-feedback"></span>
+          <small *ngIf="classForm.get('link').invalid && classForm.get('link').touched" class="text-danger">
+           Link is required.
+          </small>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" rows="3" placeholder="Description" formControlName="description"
+          (input)="updateMsgStatus($event)"></textarea>
+        </div>
+  
+        <div class="form-group">
+          <label>Message</label>
+          <textarea class="form-control" rows="3" placeholder="" formControlName="msg" [(ngModel)]="msg"></textarea>
+        </div>
+      <div class="row">
+         
+            <!-- /.col -->
+          <div class="col-xs-4" style=" left: 30%;">
+            <button type="submit" class="btn btn-primary btn-block btn-flat"  style="background: linear-gradient(40deg, #ce0d84, #790421); border: rgb(218, 9, 79);"
+            (click)=schedule() [disabled]="!classForm.valid">Schedule</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+  
+ 
+    </div>
+    <!-- /.form-box -->
+  </div>
+  <!-- /.register-box -->
+
+
+
+
+
+  <!-- <div role="alert" aria-live="assertive" aria-atomic="true" class="toast" data-autohide="false">
+    <div class="toast-header">
+      <img src="..." class="rounded mr-2" alt="...">
+      <strong class="mr-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+    </div>
+  </div> -->
+  
+  </body>
+
+    
+  <div class="container" >
+    <br><br>
+  <div class="row">
+    <div class="card" *ngFor="let notes of classList;let i = index" >
+      <div class="card-header">
+      
+          <!-- <h3 class="profile-username text-center"></h3> -->
+          <h5 class="profile-username text-center">{{classList[i].date}}</h5>
+       
+      </div>
+      <div class="card-body">
+          <ul class="list-group list-group-unbordered">
+            <li class="list-group-item" >
+              <b> {{classList[i].name}} </b>
+            </li> 
+              <li class="list-group-item" >
+                  <b>Std.</b> : {{classList[i].std}}
+              </li>
+              <li class="list-group-item" >
+                 
+                 {{classList[i].msg}}
+              </li>
+              <!-- <li class="list-group-item" style="">
+                  <!-- {{tutorList[i].description}} -->
+                  <!-- <b>About</b> {{classList[i].description}}
+              </li> --> 
+              
+            </ul>
+            <a href= {{classList[i].link}} target="_blank" class="btn btn-primary" style="background: linear-gradient(40deg, #ce0d84, #790421); border: rgb(218, 9, 79); color: floralwhite;"
+            >Start</a>
+      </div>
+    </div>
+</div>
+</div>
+
+
+
+<script type="text/javascript">
+  // $(function () {
+    $('#date').datetimepicker({
+      minDate:new Date().getDate()
+    });
+  // });
+</script>
+
+<script>
+  $('.toast').toast(true , true , 500)
+</script>
+
+<div class="hr-toaster hr-toaster-topRight" style="top: 76px; right: 0px; bottom: auto;" *ngIf="show"><span></span></div>

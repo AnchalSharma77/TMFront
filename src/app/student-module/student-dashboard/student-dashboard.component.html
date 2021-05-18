@@ -1,0 +1,61 @@
+
+<div class="row">
+    <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box">
+              <span class="info-box-icon bg-yellow" style="background-color: #c7719c   !important;"><i class="ion ion-ios-people-outline"></i></span>
+  
+              <div class="info-box-content">
+                <span class="info-box-text"><p>Tutors</p></span>
+                <span class="info-box-number">{{totalTutors}}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+    </div>
+   
+    <div class="col-md-3 col-sm-6 col-xs-12">
+        <div class="info-box">
+          <span class="info-box-icon bg-aqua" style="background-color: #c7719c   !important;"><i class=" fa fa-money"></i></span>
+
+          <div class="info-box-content">
+            <span class="info-box-text">Total Due Sum</span>
+            <span class="info-box-number">{{totalDue}}</span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+</div>
+    
+</div>
+
+<div class="row">
+   
+        <section class="content">
+           
+                <table cell-padding="50px">
+                <thead>
+                  <tr>
+                  <th>Sr. No.</th>
+                  <th>Tutor Name</th>
+                  <th>Mobile</th>
+                  <th>Due Fee</th>
+                  <th>Today's Attendance</th>
+                  <!-- <th>Name</th> -->
+                  
+                  
+                </tr>
+        
+                <tr *ngFor="let tutor of tutorList;let i = index">
+                    <td > {{i+1}}</td>
+                    <td > {{tutor.name}}</td>
+                    <td >{{tutor.mobile}}</td>
+                    <td >{{tutor. dueFee}}</td>
+                    <td >{{tutor. todayAtt}}</td>
+                    <!-- <td >{{tutor.mobile}}</td> -->
+                  
+                </tr>
+                </thead>
+              </table>
+           
+        </section>
+</div>
