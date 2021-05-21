@@ -10,8 +10,7 @@ export const routes: Routes = [
   { path: 'student', loadChildren: () => import('./student-module/student-module.module').then(m => m.StudentModuleModule) },
   { path: 'tutor', loadChildren: () => import('./tutor-module/tutor-module.module').then(m => m.TutorModuleModule) },
   { path: 'tm', loadChildren: () => import('./main-module/main-module.module').then(m => m.MainModuleModule) },
-  {path:'**',component:PagenotfoundComponent}
-
+  {path:'**',component:PagenotfoundComponent},
  ];
 
 @NgModule({
@@ -20,4 +19,4 @@ export const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routingComponents=[ PagenotfoundComponent,]
+export const routingComponents=[ PagenotfoundComponent]
