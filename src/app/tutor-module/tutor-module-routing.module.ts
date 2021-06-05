@@ -12,16 +12,14 @@ import { TutorPanelComponent } from './tutor-panel/tutor-panel.component';
 import { UploadnotesComponent } from './uploadnotes/uploadnotes.component';
 import { AuthguardGuard } from '../gaurds/authguard.guard';
 import { ClassComponent } from './class/class.component';
+import { EditdescComponent } from './editdesc/editdesc.component';
 
 
 const routes: Routes = [
- // { path: '', component: TutorModuleComponent },
-  // {path: '', redirectTo: '/tutor/tutorPanel',pathMatch: 'full'},
-  //{ path: 'login', component: TutorLoginComponent },
-  
   { path: 'tutorPanel', component: TutorPanelComponent , canActivate:[AuthguardGuard],
       children: [
         { path: 'dashboard', component: TutorDashboardComponent },
+        { path: 'editdesc', component: EditdescComponent },
         { path: 'registerStudent', component: StudentRegistrationComponent },
         { path: 'removeStudent', component: RemoveStudentComponent },
         { path: 'pay', component: PayComponent },
@@ -40,4 +38,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class TutorModuleRoutingModule { }
-export const TutorRoutingComponents=[StudentRegistrationComponent,TutorPanelComponent,PayComponent, RemoveStudentComponent, TutorDashboardComponent,MarkAttendanceComponent, FeeComponent,UploadnotesComponent,ClassComponent, ]
+export const TutorRoutingComponents=[StudentRegistrationComponent,TutorPanelComponent,PayComponent, RemoveStudentComponent, TutorDashboardComponent,MarkAttendanceComponent, FeeComponent,UploadnotesComponent,ClassComponent,EditdescComponent, ]

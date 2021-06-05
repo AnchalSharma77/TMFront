@@ -40,7 +40,10 @@ export class TutorRegistrationComponent implements OnInit {
         Validators.minLength(10),
         Validators.maxLength(10)
       ]],
-      description:[''],
+      description:['',[Validators.required,
+        Validators.minLength(100),
+        Validators.maxLength(1000)
+      ]],
       pass: ['',Validators.required],
       confpass: ['',Validators.required],
     },

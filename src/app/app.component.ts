@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LoaderserviceService } from './Loadermaterial/loaderservice.service';
-
+// import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',

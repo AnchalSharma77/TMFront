@@ -1,0 +1,41 @@
+<body class="hold-transition register-page">
+    <div class="register-box">
+      <div class="register-logo">
+        <a ><b>About</b></a>
+      </div>
+    
+      <div class="register-box-body">
+        <p class="login-box-msg"></p>
+
+        <form   [formGroup]="editDesc">
+          <div class="form-group">
+            <!-- <label>Description</label> -->
+            <a>
+                <label>Description</label> &nbsp;
+                <i class="fa fa-edit" (click)="enaleEdit()"></i>
+                <!-- <span>Edit About</span> -->
+              </a>
+            <textarea class="form-control" rows="5" placeholder="at least 100 characters...." formControlName="description"
+            [attr.disabled]="disable ? 'disabled' : null" [(ngModel)]="desc"  ></textarea>
+            <small *ngIf="editDesc.get('description').invalid && editDesc.get('description').touched" class="text-danger">
+              Description should be at least 100 characters long.
+             </small>
+          </div>
+        <div class="row">
+           
+            <div class="col-xs-4" style=" left: 30%;">
+              <button type="submit" class="btn btn-primary btn-block btn-flat" (click)=editdesc() style="background: linear-gradient(40deg, #ce0d84, #790421); border: rgb(218, 9, 79);"
+              [disabled]="!editDesc.valid">Save</button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+    
+   
+      </div>
+      <!-- /.form-box -->
+    </div>
+    <!-- /.register-box -->
+    
+    
+    </body>

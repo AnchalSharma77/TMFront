@@ -18,8 +18,7 @@ const routes: Routes = [
   { path: 'stuLogin', component: StudentLoginComponent },
   { path: 'forgotPass', component: ForgotpasswordComponent },
   { path: 'resetPass', component: ResetPasswordComponent },
-  { path: 'chat', component: ChatComponent },
-
+  // { path: 'chat', component: ChatComponent },editdesc
 ];
 
 @NgModule({

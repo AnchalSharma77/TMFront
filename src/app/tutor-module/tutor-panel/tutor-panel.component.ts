@@ -11,6 +11,7 @@ export class TutorPanelComponent implements OnInit {
   imgUrl:String="assets/Img/DefaultUserImage.png"
   userName:any;
   idParam:any;
+  // desc:any;
   
   constructor(private router:Router , private http : HttpserviceService ,private route:ActivatedRoute) { }
 
@@ -26,6 +27,7 @@ export class TutorPanelComponent implements OnInit {
       }
     );
 
+    // this.desc=localStorage.getItem("Tdesc");
     this.getProfileImage();
   }
     
@@ -86,5 +88,8 @@ export class TutorPanelComponent implements OnInit {
     )
   }
   
+  editDesc(){
+    
+  }
 
 }

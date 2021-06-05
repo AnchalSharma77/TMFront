@@ -47,7 +47,7 @@ export class PayComponent implements OnInit {
   
 
   sendId(){
-    const id = this.payFee.controls['id'].value;
+  //  const id = this.payFee.controls['id'].value;
     const jsonString = JSON.stringify(this.payFee.value);
     console.log(jsonString);
     this.params="?id="+this.idParam

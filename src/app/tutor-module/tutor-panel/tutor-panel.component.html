@@ -35,7 +35,14 @@
                  
                   <p>
                     {{userName}}
-                    <!-- <small>Tutor details</small> -->
+                    <!-- <small>
+                    <div class="overflow-auto" style="  overflow-y: scroll;">
+                    
+                        {{desc}}
+                      </div>
+                      
+                    </small> -->
+                    <!-- <a [routerLink]="['/tutor/tutorPanel/editdesc']"  queryParamsHandling="preserve" class="fa fa-edit"></a> -->
                     
 
                   </p>
@@ -144,8 +151,14 @@
                 <i class="fa fa-book"></i> <span>Upload Notes</span> 
             </a>  
           </li>
+          <li>
+          <a [routerLink]="['/tutor/tutorPanel/editdesc']"  queryParamsHandling="preserve">
+          <i class="fa fa-edit"></i><span>Edit About</span>
+        </a>
+        </li>
         </ul>
       </a>
+     
       </section>
       <!-- /.sidebar -->
     </aside>

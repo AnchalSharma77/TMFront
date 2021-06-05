@@ -16,7 +16,6 @@ export class UploadnotesComponent implements OnInit {
   constructor(private fb: FormBuilder , private http:HttpserviceService ,private route:ActivatedRoute ) { }
 
   ngOnInit(): void {
-    console.log("test")
     this.addNotes=this.fb.group({
       std:["", Validators.required],
       fileName:[""]
@@ -33,7 +32,6 @@ export class UploadnotesComponent implements OnInit {
   
 
   onNotesUpload(event) {
-    console.log("-------------file upload")
     const std = this.addNotes.controls['std'].value;
     const fileName = this.addNotes.controls['fileName'].value;
     const file = event.target.files[0]

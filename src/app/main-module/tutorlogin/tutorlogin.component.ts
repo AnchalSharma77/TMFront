@@ -44,7 +44,9 @@ export class TutorloginComponent implements OnInit {
      console.log(res)
      if(res.resCode==200)
      {
+       var desc =res.desc;
        localStorage.setItem("user id",id)
+      //  localStorage.setItem("Tdesc",desc)
        this.router.navigate(['/tutor/tutorPanel'] ,{queryParams:{id:btoa(id)}});
      }
      else if(res.resCode==404)
